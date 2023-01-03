@@ -109,24 +109,18 @@
               name="comment"
               placeholder="Text input"
             ></textarea>
-            <div class="modal-policy">
+            <label class="modal-policy">
               <input
                 class="policy-checkbox"
                 type="checkbox"
                 name="policy"
                 value="policy"
-                id="policy"
               />
-              <label for="policy">
-                <div class="policy-wrap">
-                  <svg class="policy-svg" width="10" height="8" id="policy">
-                    <use href="./images/icons.svg#icon-vector"></use>
-                  </svg>
-                </div>
-                <span class="spanspan">I accept the terms and conditions of the
+              <span class="policy-icon"></span>
+              <span class="policy-text"
+                >I accept the terms and conditions of the
                 <a href="#">Privacy Policy</a></span>
-              </label>
-            </div>
+            </label>
             <button class="modal-button-send" type="submit">Send</button>
           </form>
         </div>
@@ -444,8 +438,8 @@
           <p class="label-header">Subscribe</p>
           <div class="display">
             <label name="email" class="footer-label">
-              <span class="footer-email">E-mail</span>
               <input type="email" name="E-mail" />
+              <span class="footer-email">E-mail</span>
             </label>
             <button class="footer-button" type="submit">
               <span class="subscribe">Subscribe</span>

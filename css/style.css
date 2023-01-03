@@ -284,6 +284,7 @@ h3 {
 
 .svg-modal {
   position: absolute;
+
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
@@ -291,6 +292,15 @@ h3 {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.icon-wrap > input:hover,
+.icon-wrap > input:focus {
+  border-color: var(--brand-text-color);
+}
+
+input:hover ~ .svg-modal,
+input:focus ~ .svg-modal {
+  fill: var(--brand-text-color);
+}
 .modal-form > textarea {
   margin-top: 4px;
   resize: none;
@@ -302,8 +312,12 @@ h3 {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-form > textarea:hover,
+.modal-form > textarea:focus {
+  border-color: var(--brand-text-color);
+}
+
 .modal-policy {
-  position: relative;
   display: flex;
   flex-direction: row;
   margin-top: 16px;
@@ -312,42 +326,40 @@ h3 {
 }
 
 .policy-checkbox {
-  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-.policy-checkbox:checked ~ label .policy-wrap {
-  background-color: #404bbf;
-  border-color: transparent;
-}
-
-.policy-svg {
-  fill: #ffffff;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.policy-wrap {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.policy-icon {
+  display: inline-block;
   width: 16px;
   height: 16px;
   border: 1.25px solid #2e2f42;
   border-radius: 2px;
-  background-color: #ffffff;
+  background-image: url(../images/property.svg);
+  background-size: contain;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form > textarea:hover,
-.modal-form > textarea:focus {
-  border-color: var(--brand-text-color);
+.policy-checkbox:focus + .policy-icon {
+  border: 1.5px solid #2e2f42;;
 }
 
-.spanspan {
-  margin-left: 25px;
+.policy-checkbox:checked + .policy-icon {
+background-color: var(--brand-text-color);
+border: none;
 }
 
-.modal-policy label > a {
+.policy-text {
+  margin-left: 8px;
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  color: #757575;
+}
+
+.modal-policy a {
   color: var(--brand-text-color);
 }
 
@@ -368,11 +380,6 @@ h3 {
   text-align: center;
   letter-spacing: 0.04em;
   color: #ffffff;
-}
-
-.icon-wrap > input:hover,
-.icon-wrap > input:focus {
-  border-color: var(--brand-text-color);
 }
 
 .link2 {
@@ -852,8 +859,7 @@ button {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-label:hover > .footer-email,
-.footer-label:focus > .footer-email {
+.footer-label input:focus + .footer-email {
   opacity: 0;
 }
 
@@ -872,6 +878,13 @@ button {
   justify-content: center;
   align-items: center;
   border: none;
+  cursor: pointer;
+}
+
+.footer-button:hover {
+  background-color: #404bbf;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .subscribe {
